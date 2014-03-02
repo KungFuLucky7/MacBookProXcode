@@ -1,0 +1,14 @@
+# Generic Files #
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Class Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
