@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>094CC989-4A8F-4947-8DBE-1607A915F821</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Matrix Multiplication Benchmark</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B85B0B33-CE59-4364-A417-EECF0BEB8380</key>
+		<string>https://github.com/KungFuLucky7/MacBookPro.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Matrix Multiplication Benchmark/Matrix Multiplication Benchmark.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B85B0B33-CE59-4364-A417-EECF0BEB8380</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/KungFuLucky7/MacBookPro.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B85B0B33-CE59-4364-A417-EECF0BEB8380</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B85B0B33-CE59-4364-A417-EECF0BEB8380</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MacBookPro</string>
+		</dict>
+	</array>
+</dict>
+</plist>
