@@ -112,17 +112,6 @@ int main(void)
     printf("nmin: %d\tnmax: %d\tstep: %d\n", nmin, nmax, step);
     
     n = nmin;
-    // Initialize a[][] and b[][] // Typical size from 100*100 to 500*500
-    allocateMatrix(n);
-    
-    // Define arbitrary initial values of matrices a[][] and b[][]
-    for(i=0; i<n; i++) {
-        for(j=0; j<n; j++) {
-            a[i][j] = rand();
-            b[i][j] = rand();
-        }
-    }
-    
     R = malloc((nmax/nmin) * sizeof(*R));
     index = 0;
     for(n=nmin; n<=nmax; n+=step)
@@ -130,7 +119,16 @@ int main(void)
         printf("==================================================================================\n");
         printf("n=%-7d\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\n", n, "Tijk", "Tjik", "Tikj", "Tkij", "Tjki", "Tji");
         printf("==================================================================================\n");
+        // Initialize a[][] and b[][] // Typical size from 100*100 to 500*500
         allocateMatrix(n);
+        
+        // Define arbitrary initial values of matrices a[][] and b[][]
+        for(i=0; i<n; i++) {
+            for(j=0; j<n; j++) {
+                a[i][j] = rand();
+                b[i][j] = rand();
+            }
+        }
         M =(nmax*nmax*nmax)/(n*n*n);
         for(i=0; i<n; i++) // Matrix [][] initialization
             for(j=0; j<n; j++) c[i][j]=0.0;
