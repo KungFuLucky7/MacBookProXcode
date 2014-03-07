@@ -117,7 +117,7 @@ int main(void)
     for(n=nmin; n<=nmax; n+=step)
     {
         printf("==================================================================================\n");
-        printf("n=%-7d\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\n", n, "Tijk", "Tjik", "Tikj", "Tkij", "Tjki", "Tji");
+        printf("n=%-7d\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\t\t%-7s\n", n, "Tijk", "Tjik", "Tikj", "Tkij", "Tjki", "Tkji");
         printf("==================================================================================\n");
         // Initialize a[][] and b[][] // Typical size from 100*100 to 500*500
         allocateMatrix(n);
