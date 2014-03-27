@@ -43,23 +43,18 @@ int main()
         LN++;
         // read an entire line into memory
         char buf[MAX_CHARS_PER_LINE];
+        char saved_buf[MAX_CHARS_PER_LINE];
         fin.getline(buf, MAX_CHARS_PER_LINE);
+        strcpy(saved_buf,buf);
         // exclude block comment
-        string str(buf);
-        if (bc_start_found==string::npos)
-            bc_start_found = str.find("/*");
+        string str(saved_buf);
         if (bc_start_found!=string::npos) {
-            cout << buf << endl;
+            //cout << buf << endl;
             bc_end_found = str.find("*/");
-            if (bc_end_found!=string::npos)
-                cout << buf << endl;
         }
         if (bc_start_found!=string::npos && bc_end_found!=string::npos) {
             bc_start_found=string::npos;
             bc_end_found=string::npos;
-            continue;
-        }
-        if (bc_start_found!=string::npos) {
             continue;
         }
         // parse the line into blank-delimited tokens
@@ -69,10 +64,17 @@ int main()
         const char* token[MAX_TOKENS_PER_LINE] = {}; // initialize to 0
         
         // parse the line
-        token[0] = strtok(buf, DELIMITER); // first token
+        token[0] = strtok(saved_buf, DELIMITER); // first token
         if (token[0]) // zero if line is blank
         {
             string tmp(token[0]);
+            // exclude block comment
+            if (bc_start_found==string::npos)
+                bc_start_found = tmp.find("/*");
+            if (bc_start_found!=string::npos) {
+                //cout << buf << endl;
+                continue;
+            }
             // exclude line comment
             found = tmp.find("//");
             if (found==string::npos) {
@@ -84,7 +86,7 @@ int main()
                     continue;
             }
             else {
-                cout << buf << endl;
+                //cout << buf << endl;
                 continue;
             }
             // count control structures

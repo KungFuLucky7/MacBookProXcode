@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-               BuildableName = "LLOC-PLOC Counter Tool"
-               BlueprintName = "LLOC-PLOC Counter Tool"
-               ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+               BlueprintIdentifier = "1FE8E40B18E39D0800C91B01"
+               BuildableName = "QSORT"
+               BlueprintName = "QSORT"
+               ReferencedContainer = "container:QSORT.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FE8E40B18E39D0800C91B01"
+            BuildableName = "QSORT"
+            BlueprintName = "QSORT"
+            ReferencedContainer = "container:QSORT.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -43,8 +43,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/terrywong/Documents/testBM1/B"
+      useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -52,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FE8E40B18E39D0800C91B01"
+            BuildableName = "QSORT"
+            BlueprintName = "QSORT"
+            ReferencedContainer = "container:QSORT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FE8E40B18E39D0800C91B01"
+            BuildableName = "QSORT"
+            BlueprintName = "QSORT"
+            ReferencedContainer = "container:QSORT.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
