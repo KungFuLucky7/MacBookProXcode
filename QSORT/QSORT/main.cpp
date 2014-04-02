@@ -12,12 +12,12 @@
 using namespace std;
 
 #define MMAX 5000000
-double m[MMAX];
+int m[MMAX];
 
 // Quicksort function
-void QSORT(double a[], int left, int right)
+void QSORT(int a[], int left, int right)
 {
-	double pivot, l_saved, r_saved;
+	int pivot, l_saved, r_saved;
 	
 	l_saved = left;
 	r_saved = right;
@@ -53,7 +53,7 @@ int main()
 {
     srand((unsigned)time(NULL));
     for(int i = 0; i < MMAX; i++) {
-        m[i] = (double)rand()/RAND_MAX;
+        m[i] = rand();
     }
     QSORT(m, 0, MMAX-1);
 

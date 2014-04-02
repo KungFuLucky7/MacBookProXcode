@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-               BuildableName = "LLOC-PLOC Counter Tool"
-               BlueprintName = "LLOC-PLOC Counter Tool"
-               ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+               BlueprintIdentifier = "1FD72C6F18EB82E700322920"
+               BuildableName = "Cyclomatic Complexity Tool"
+               BlueprintName = "Cyclomatic Complexity Tool"
+               ReferencedContainer = "container:Cyclomatic Complexity Tool.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FD72C6F18EB82E700322920"
+            BuildableName = "Cyclomatic Complexity Tool"
+            BlueprintName = "Cyclomatic Complexity Tool"
+            ReferencedContainer = "container:Cyclomatic Complexity Tool.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,10 +52,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FD72C6F18EB82E700322920"
+            BuildableName = "Cyclomatic Complexity Tool"
+            BlueprintName = "Cyclomatic Complexity Tool"
+            ReferencedContainer = "container:Cyclomatic Complexity Tool.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,10 +70,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F1C7F5518DA5C3900BD3967"
-            BuildableName = "LLOC-PLOC Counter Tool"
-            BlueprintName = "LLOC-PLOC Counter Tool"
-            ReferencedContainer = "container:LLOC-PLOC Counter Tool.xcodeproj">
+            BlueprintIdentifier = "1FD72C6F18EB82E700322920"
+            BuildableName = "Cyclomatic Complexity Tool"
+            BlueprintName = "Cyclomatic Complexity Tool"
+            ReferencedContainer = "container:Cyclomatic Complexity Tool.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
