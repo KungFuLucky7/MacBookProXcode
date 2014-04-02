@@ -201,10 +201,10 @@ int main()
     //cout << "NPU: " << NPU << endl;
     //cout << "NSC: " << NSC << endl;
     //cout << "NEQ: " << NEQ << endl;
-    cout << "Nif: " << Nif << endl;
+    //cout << "Nif: " << Nif << endl;
     //cout << "Nswitch: " << Nswitch << endl;
-    cout << "Nwhile: " << Nwhile << endl;
-    cout << "Nfor: " << Nfor << endl << endl;
+    //cout << "Nwhile: " << Nwhile << endl;
+    //cout << "Nfor: " << Nfor << endl << endl;
     cout << "\nV: " << V << endl;
     cout << "LLOC: " << LLOC << endl;
     cout << "PLOC: " << PLOC << endl;
