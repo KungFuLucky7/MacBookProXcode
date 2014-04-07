@@ -205,6 +205,8 @@ int main()
     //cout << "Nswitch: " << Nswitch << endl;
     //cout << "Nwhile: " << Nwhile << endl;
     //cout << "Nfor: " << Nfor << endl << endl;
+    // V(G)=c+1
+    V++;
     cout << "\nV: " << V << endl;
     cout << "LLOC: " << LLOC << endl;
     cout << "PLOC: " << PLOC << endl;
