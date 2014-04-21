@@ -10,6 +10,9 @@
 #include <cmath>
 using namespace std;
 
+#define M_0 24324
+#define M_1 295
+
 int Level;
 double m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16;
 
@@ -378,12 +381,14 @@ void UpdateCostDrivers() {
 
 int main()
 {
-    int M, L = -1, q, m_0 = 24324, m_1 = 295;
-    double m, E, P, T, N, C, a, b, r = 2.5, s;
-    char Mode;
+    int M, L = -1, q;
+    double m, E, P, T, N, C, a, b, r = 2.5, s, m_0, m_1;
+    char Choice, Mode;
     string project_size;
     
     m1 = m1 = m2 = m3 = m4 = m5 = m6 = m7 = m8 = m9 = m10 = m11 = m12 = m13 = m14 = m15 = m16 = 1;
+    m_0 = M_0;
+    m_1 = M_1;
     while (L < 0) {
         cout << "Please enter L, the number of thousands of delivered source instructions [KDSI/KLOC] or 0 to skip:\n";
         cin >> L;
@@ -392,6 +397,16 @@ int main()
         while (M <= 0) {
             cout << "Please enter M ,memory consumption (the size of executable program) in Bytes:\n";
             cin >> M;
+        }
+        while (Choice != 'Y' && Choice != 'y' && Choice != 'N' && Choice != 'n') {
+            cout << "Do you want to use the default values for m0 = " << m_0 << " (program header and environment space) and m1 = " << m_1 << " (average number of bytes occupied by a translated source instruction)? (y/n) \n";
+            cin >> Choice;
+        }
+        if (Choice == 'N' || Choice == 'n') {
+            cout << "Please enter a value for m0 (program header and environment space):\n";
+            cin >> m_0;
+            cout << "Please enter a value for m1 (average number of bytes occupied by a translated source instruction):\n";
+            cin >> m_1;
         }
         L = (M - m_0)/(1000*m_1);
     }
