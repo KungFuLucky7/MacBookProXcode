@@ -10,7 +10,9 @@
 #include <cmath>
 using namespace std;
 
+// Program header and environment space in bytes
 #define M_0 24324
+// Average number of bytes occupied by a translated source instruction
 #define M_1 295
 
 int Level;
