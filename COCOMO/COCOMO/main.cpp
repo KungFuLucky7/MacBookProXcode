@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 
 // Program header and environment space in bytes
@@ -383,14 +384,16 @@ void UpdateCostDrivers() {
 
 int main()
 {
-    int M, L = -1, q;
-    double m, E, P, T, N, C, a, b, r = 2.5, s, m_0, m_1;
+    int M = -1, q;
+    double L = -1, m, E, P, T, N, C, a, b, r = 2.5, s, m_0, m_1;
     char Choice, Mode;
-    string project_size;
+    string product_name, project_size;
     
     m1 = m1 = m2 = m3 = m4 = m5 = m6 = m7 = m8 = m9 = m10 = m11 = m12 = m13 = m14 = m15 = m16 = 1;
     m_0 = M_0;
     m_1 = M_1;
+    cout << "Please enter the product name of your COCOMO analysis:\n";
+    getline(cin, product_name);
     while (L < 0) {
         cout << "Please enter L, the number of thousands of delivered source instructions [KDSI/KLOC] or 0 to skip:\n";
         cin >> L;
@@ -414,11 +417,11 @@ int main()
     }
     if (L < 8)
         project_size = "Small";
-    else if (L >= 8)
+    else if (L >= 8 && L <= 32)
         project_size = "Intermediate";
-    else if (L >= 32)
+    else if (L >= 32 && L <= 128)
         project_size = "Medium";
-    else if (L >= 128)
+    else if (L >= 128 && L <= 512)
         project_size = "Large";
     else if (L >= 512)
         project_size = "Very Large";
@@ -505,7 +508,8 @@ int main()
     T = ceil(r*pow(E, s));
     N = ceil(E/T);
     C = q*E;
-    cout << "\nThe software project size is " << project_size << ".\n";
+    cout << "\nThe software product is " << product_name << ".\n";
+    cout << "The software project size is " << project_size << ".\n";
     cout << "L = " << L << ", the number of thousands of delivered source instructions [KDSI/KLOC]\n";
     cout << "E = " << E << ", effort for the SW development phase of the life-cycle [PM, person-months]\n";
     cout << "P = " << P << ", productivity [KDSI/PM]\n";

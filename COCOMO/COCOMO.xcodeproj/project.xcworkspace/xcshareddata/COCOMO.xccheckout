@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>98CE569B-1704-43D3-95FB-5BABC204CA9A</string>
+	<string>B8FDE87F-BD4A-477D-A4B8-B2EE7E1DCA7E</string>
 	<key>IDESourceControlProjectName</key>
 	<string>COCOMO</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>26853A75-C438-4A70-BC15-A47D0DAAB8C8</key>
+		<key>B25FFB9C-3ECC-4EC4-A7B8-4836FBB9D2EC</key>
 		<string>https://github.com/KungFuLucky7/MacBookProXcode.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>COCOMO/COCOMO.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>26853A75-C438-4A70-BC15-A47D0DAAB8C8</key>
+		<key>B25FFB9C-3ECC-4EC4-A7B8-4836FBB9D2EC</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>26853A75-C438-4A70-BC15-A47D0DAAB8C8</string>
+	<string>B25FFB9C-3ECC-4EC4-A7B8-4836FBB9D2EC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>26853A75-C438-4A70-BC15-A47D0DAAB8C8</string>
+			<string>B25FFB9C-3ECC-4EC4-A7B8-4836FBB9D2EC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MacBookProXcode</string>
 		</dict>
