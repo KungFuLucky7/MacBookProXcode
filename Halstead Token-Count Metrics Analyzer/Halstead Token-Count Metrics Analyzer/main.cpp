@@ -29,11 +29,11 @@ const char* data_types[19] = {"char", "char*", "short", "short*", "int", "int*",
  n1* = the limit value of n1 for the most compact notation of the program (n1*=2, i.e. a procedure name and a separator: <name>, <parameter_1>, …, <parameter_n>)
  n2* = the limit value of n2 for the most compact notation of the program (the number of distinct input and output parameters of the program)
  */
-double n1=0, n2=0, N1=0, N2=0, n1_limit = 2, n2_limit = 3, n, N, N_estimate, V, V_min, L, L_estimate, D, Lambda, Lambda_estimate, I, E, T_estimate, S = 18, M, B_estimate, B = 50;
+double n1=0, n2=0, N1=0, N2=0, n1_limit = 0, n2_limit = -1, n, N, N_estimate, V, V_min, L, L_estimate, D, Lambda, Lambda_estimate, I, E, T_estimate, S = 18, M, B_estimate, EFM_size = 0;
 // supported operators excluding control structure operators
-const char* operators[] = {"main", "printf", "scanf", "goto", "{", "(", "[", "*", ",", ";", ".", "::", ">", "<", ">=", "<=", "!=", "==", "+", "-", "/", "%", "=", "+=", "-=", "*=", "/=", "%=", "&", "&&", "|", "||", "!", "<<", ">>", "sqrt", "log", "exp", "pow", "sin", "cos", "++", "--", "^", "->"};
-const char* validated_operators[11] = { "+", "-", "*", "/", "%", "=", ">", "<", "&", "|", "!"};
-const char removed_chars[] = "\'})]";
+const char* operators[] = {"main", "printf", "scanf", "goto", "{", "(", "[", "*", ",", ";", ".", ":", "::", ">", "<", ">=", "<=", "!=", "==", "+", "-", "/", "%", "=", "+=", "-=", "*=", "/=", "%=", "&", "&&", "|", "||", "!", "<<", ">>", "sqrt", "log", "exp", "pow", "sin", "cos", "++", "--", "^", "->", "new", "new[]", "delete", "delete[]", "sizeof", "throw", "catch", "malloc", "free"};
+const char* validated_operators[12] = { "+", "-", "*", "/", "%", "=", ">", "<", "&", "|", "!", ":"};
+const char removed_chars[] = "\'})]\r\n\t";
 map<string, int> operators_hash_map;
 map<string, int> operands_hash_map;
 typedef map<string, int>::iterator iter;
@@ -125,6 +125,15 @@ bool validateOperator(string token, char op) {
             else
                 return false;
             break;
+        case 58:
+            // ":" operator
+            if (op_pos!=string::npos && op_pos!=token.find("::") && op_pos!=token.find("::")+1 && token.find(":")!=token.length()-1) {
+                cout << ":" << token << endl;
+                return true;
+            }
+            else
+                return false;
+            break;
         default:
             cout << "The operator is not supported!";
             return false;
@@ -143,6 +152,28 @@ bool hasMoreOperators(string tmp, size_t pos) {
     return false;
 }
 
+// function to check whether an operator is within a string
+bool OpInString(size_t op_pos, string tmp) {
+    size_t double_quotes_begin=string::npos, double_quotes_end=string::npos;
+    
+    double_quotes_begin = tmp.find("\"");
+    double_quotes_end = tmp.find_last_of("\"");
+    if (double_quotes_begin!=string::npos && total_num_quotes%2==0 && tmp.find(":")!=string::npos) {
+        if (double_quotes_begin!=double_quotes_end && op_pos>=double_quotes_begin && op_pos<=double_quotes_end)
+            return true;
+        else if (double_quotes_begin==double_quotes_end && op_pos<=double_quotes_end)
+            return true;
+    }
+    else if (double_quotes_begin!=string::npos && total_num_quotes%2!=0 && tmp.find(":")!=string::npos) {
+        if (double_quotes_begin!=double_quotes_end && op_pos<=double_quotes_begin && op_pos>=double_quotes_end)
+            return true;
+        else if (double_quotes_begin==double_quotes_end && op_pos>=double_quotes_begin)
+            return true;
+    }
+    
+    return false;
+}
+
 // function to check for operators in a token
 void checkOperator(string tmp) {
     size_t is_operator=string::npos, operator_len, operand_start_pos;
@@ -150,8 +181,8 @@ void checkOperator(string tmp) {
     
     for (int i = 0; i < sizeof(operators)/sizeof(char*); i++) {
         is_operator = tmp.find(operators[i]);
-        if (is_operator!=string::npos) {
-            if (strlen(operators[i])==1 && find(validated_operators, validated_operators+11, operators[i])!=validated_operators+11) {
+        if (is_operator!=string::npos && !OpInString(is_operator, tmp)) {
+            if (strlen(operators[i])==1 && find(validated_operators, validated_operators+12, operators[i])!=validated_operators+12) {
                 const char* pos = operators[i];
                 if (validateOperator(tmp, *pos)) {
                     operators_pos_hash_map[is_operator] = operators[i];
@@ -218,6 +249,16 @@ int main()
     printf("Working Dir: %s\n", getcwd(NULL, 0));
     cout << "Please enter the filename for analysis from the Halstead Token-Count Metrics Analyzer:\n";
     cin >> filename;
+    while (n1_limit<2) {
+        cout << "n1 is the number of distinct operators used in a program.\n";
+        cout << "Please enter the limit value of n1, n1* (at least 2 by default, the procedure name and a separator):\n";
+        cin >> n1_limit;
+    }
+    while (n2_limit<0) {
+        cout << "n2 is the number of distinct operands used in a program.\n";
+        cout << "Please enter the limit value of n2, n2* (the number of distinct input and output parameters):\n";
+        cin >> n2_limit;
+    }
     
     // create a file-reading object
     ifstream fin;
@@ -392,7 +433,7 @@ int main()
                     operand.erase(remove(operand.begin(), operand.end(), removed_chars[i]), operand.end());
                 if (operand.length()>0) {
                     operands_hash_map[operand]++;
-                    //cout << "Getting unfound operand: " << operand << endl;
+                    //cout << "Getting unmatched operand: " << operand << endl;
                 }
             } else {
                 operator_found = false;
@@ -470,7 +511,7 @@ int main()
                         operand.erase(remove(operand.begin(), operand.end(), removed_chars[i]), operand.end());
                     if (operand.length()>0) {
                         operands_hash_map[operand]++;
-                        //cout << "Getting unfound operand: " << operand << endl;
+                        //cout << "Getting unmatched operand: " << operand << endl;
                     }
                 } else {
                     operator_found = false;
@@ -509,9 +550,9 @@ int main()
     // Calculate the Halstead SW Science
     n = n1 + n2; // tokens
     N = N1 + N2;
-    N_estimate = n1*log2(n1) + n2*log2(n2); // tokens
-    V = N*log2(n); // bits
-    V_min = (2 + n2_limit) * log2(2+n2_limit); // bits
+    N_estimate = ceil(n1*log2(n1) + n2*log2(n2)); // tokens
+    V = ceil(N*log2(n)); // bits
+    V_min = ceil((2 + n2_limit) * log2(2+n2_limit)); // bits
     L = V_min/V; // Lmax = 1
     L_estimate = (2*n2)/(n1*N2);
     D = 1/L; // D~ = V/V*~, V*=VL~
@@ -522,7 +563,7 @@ int main()
     T_estimate = E/S; // sec
     M = n2_limit/6; // modules
     B_estimate = V/3000; // bugs
-    
+
     cout << "\nLLOC: " << LLOC << endl;
     cout << "The number of distinct operators, n1: " << n1 << endl;
     cout << "The number of distinct operands, n2: " << n2 << endl;
@@ -545,7 +586,7 @@ int main()
     cout << "The programming (coding) time estimate, T~: " << T_estimate << " [sec]" << endl;
     cout << "The modularity formula, M: " << M << " [modules]" << endl;
     cout << "The error formula, B~: " << B_estimate << " [bugs]" << endl;
-    cout << "The error-free modulus size (B < 1/2): " << B << " [lines]" << endl;
+    cout << "The error-free modulus size (B < 1/2): " << (B_estimate<0.5?"50":"Greater than 50") << " [lines]" << endl;
     
     return 0;
 }
